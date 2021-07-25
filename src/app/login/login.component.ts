@@ -22,10 +22,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  login(){
+  login(a:any, p:any){
     // alert("Login Clicked")
-    var acno= this.acno;
-    var pswd = this.password;
+    var acno= a.value;
+    console.log(a.value);
+    
+    var pswd = p.value;
+    console.log(p.value);
+    
     let accDetails = this.user;
     if(acno in accDetails){
       if(pswd == accDetails[acno]["password"])
@@ -45,13 +49,13 @@ export class LoginComponent implements OnInit {
 
 
   }
-  accChange(event:any){
-    console.log(event.target.value);
-    this.acno= event.target.value;
+  // accChange(event:any){
+  //   console.log(event.target.value);
+  //   this.acno= event.target.value;
     
-  }
-  pswdChange(event:any){
-    console.log(event.target.value);
-    this.password= event.target.value;
-  }
+  // }
+  // pswdChange(event:any){
+  //   console.log(event.target.value);
+  //   this.password= event.target.value;
+  // }
 }

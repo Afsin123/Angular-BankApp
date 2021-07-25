@@ -6,9 +6,9 @@
             <div class="main" style="margin-top: 50px; background-color: rgb(248, 192, 171); text-align: center; ">
                 <h4> Bank Application Login </h4>
                <h5>  {{aim }}  </h5> 
-                <input type="text" id="acno" (change)="accChange($event)" [value]="accnum" placeholder="Username"> <br>
-                <input type="text" id="password" (change)="pswdChange($event)" placeholder="Enter the password"> <br>
-                <button (click)="login()" value="login"> Log In </button>
+                <input type="text" id="acno" #acno [value]="accnum" placeholder="Username"> <br>
+                <input type="text" id="password" #pswd placeholder="Enter the password"> <br>
+                <button (click)="login(acno,pswd)" value="login"> Log In </button>
                 <h6> <a class="textfp" href="# ">Forgotten password?</a>
                     <div class="line"></div>
                     <input type="button" value="Create New Account" class="button buttonl butefct"> <br><br>
