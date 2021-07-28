@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  uname = ""
+  password = ""
+  acno = ""
+
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+  register(){
+alert("Register clicked!!")
+
   }
 
 }

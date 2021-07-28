@@ -1,1 +1,26 @@
-<p>register works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="main" style="margin-top: 50px; background-color: rgb(108, 205, 223); text-align: center; ">
+                <h4> Register here </h4>
+                <form (ngSubmit)="register()">
+                <input type="text" id="uname" class ="text" name = "uname "[(ngModel)]="uname"  placeholder="Username"> <br> <br>
+
+                <input type="text" id="acno" class= "text" name="acno" [(ngModel)]="acno"  placeholder="Account Number"> <br> <br>
+
+                <input type="text" id="password" name="password" [(ngModel)]="password"    placeholder="Enter the password"> <br> <br>
+
+                <input type="submit" value="register" class="button buttonl" > <br>
+                
+                 </form>
+                   
+                    <!-- <input type="button" value="SignUp" class="button buttonl butefct"> <br><br> -->
+                
+            </div>
+        </div>
+            <div class="col-4"></div>
+       
+    </div>
+</div> 
