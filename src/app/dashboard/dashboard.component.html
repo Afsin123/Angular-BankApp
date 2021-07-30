@@ -1,1 +1,43 @@
-<p>dashboard works!</p>
+<p>dashboard works</p>
+
+<h1> Homepage </h1>
+    <h1 id="profile"></h1>
+
+    <button onclick="displayBalance()">
+        Balance Enquiry
+    </button>
+    <button onclick="fundtransfer()" data-bs-toggle="modal" data-bs-target="#staticBackdrop" > Fund Transfer now </button>
+    <button onclick="logout()">
+        Logout 
+    </button>
+    <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Fund Transfer
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade modal-dialog modal-dialog-centered" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="staticBackdropLabel">Account Transfer </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mt-1">
+          <input type="text" class="form-control" id="toaccount" placeholder="Enter to_account number">
+        </div>
+        <div class="mt-1">
+          <input type="text" class="form-control" id="confirmaccount" placeholder="Re-enter account number">
+        </div>
+        <div class="mt-1"> 
+          <input type="text" class="form-control" id="amount_transfer" placeholder="Enter the amount to transfer ">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="fundtransfer()">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
