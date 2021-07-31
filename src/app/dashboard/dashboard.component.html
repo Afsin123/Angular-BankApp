@@ -1,6 +1,68 @@
-<p>dashboard works</p>
+<h1> Welcome User </h1>
 
-<h1> Homepage </h1>
+<!-- Two forms for deposit and withdraw -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="main" style="margin-top: 50px; background-color: whitesmoke; text-align: center; ">
+
+        <h4> Deposit Form </h4>
+
+        <form (ngSubmit)="deposit()">
+          <input type="text" id="acno" class=" text " name="acno" [(ngModel)]="acno" placeholder="Account Number"> <br><br>
+          
+          <input type="text" id="password" class="text" name="password" [(ngModel)]="password" placeholder="Enter the password"> <br> <br>
+          
+          <input type="text" id="amount" class=" text " name="amount" [(ngModel)]="amount" placeholder="Amountr" ><br><br>
+
+          <input type="submit" value="Deposit" class="button butefct"> <br>
+
+        </form>
+      </div>
+    </div>
+    <div class="col-4"></div>
+
+  </div>
+ <!-- Withdraw form -->
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="main" style="margin-top: 50px; background-color: whitesmoke; text-align: center; ">
+        <h4> Withdraw Form </h4>
+
+        <form (ngSubmit)="withdraw()">
+
+          <input type="text" id="acno1" class=" text " name="acno" [(ngModel)]="acno1" placeholder="Account Number"><br><br>
+          
+          <input type="text" id="password1" class="text" name="password" [(ngModel)]="password1"  placeholder="Enter the password"> <br> <br>
+          
+          <input type="text" id="amount1" class=" text " name="amount" [(ngModel)]="amount1" placeholder="Amountr"> <br><br>
+
+          <input type="submit" value="Withdraw " class="button butefct"> <br>
+
+        </form>
+
+      </div>
+    </div>
+    <div class="col-4"></div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 
+
     <h1 id="profile"></h1>
 
     <button onclick="displayBalance()">
@@ -10,13 +72,13 @@
     <button onclick="logout()">
         Logout 
     </button>
-    <!-- Button trigger modal -->
+    <!-Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Fund Transfer
 </button> -->
 
 <!-- Modal -->
-<div class="modal fade modal-dialog modal-dialog-centered" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade modal-dialog modal-dialog-centered" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -40,4 +102,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --> -->

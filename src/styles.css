@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-    background: #f5f4f3;
+    background: #d6d6d5;
 
 }
 .main{
 
     align-items: center;
-    background-color: #fff;
+    background-color: white;
 
     border-radius: 8px;
 
@@ -39,7 +39,7 @@ body{
 
 
 .button{
-    background-color: #e69e04;
+    background-color: #29a1d8;
     border: none;
     border-radius: 6px;
     font-size:20px;
@@ -71,7 +71,7 @@ body{
 }
 .button1:hover,.button1:hover{
     outline: none !important;
-    background-color: #be0b05;
+    background-color: #fdfcfc;
 }
 h4{
     text-align: center;
