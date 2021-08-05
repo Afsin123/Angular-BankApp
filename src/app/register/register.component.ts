@@ -14,6 +14,11 @@ export class RegisterComponent implements OnInit {
   password = ""
   acno = ""
 
+  registerForm=this.fb.group({
+    uname:[''],
+    acno:[''],
+    password:['']
+  })
 
 
   constructor(private ds: DataService, private router: Router, private fb:FormBuilder) { }
@@ -21,9 +26,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   register() {
-    var uname = this.uname;
-    var password = this.password;
-    var acno = this.acno;
+    var uname = this.registerForm.value.uname;
+    var password = this.registerForm.value.password;
+    var acno = this.registerForm.value.acno;
+    //console.log(this.registerForm);
+    
 
     var result = this.ds.register(acno, uname, password);
     if (result) {
