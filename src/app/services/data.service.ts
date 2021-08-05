@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
+  currentUser="";
+
   user: any = {
     1000: { acno: 1000, username: "Akhil", password: "userone", balance: 2000 },
     1001: { acno: 1001, username: "Anil", password: "usertwo", balance: 3000 },
@@ -16,22 +18,54 @@ export class DataService {
 
   constructor() { }
 
-  // Login(acno: any, password:any){
-  //   let accDetails = this.user
-  //   if (acno in accDetails){
-  //     if( password == accDetails[acno]["password"]){
-  //       return true
-  //     }
-  //     else {
-  //       alert("Incorrect Password")
-  //       return false
-  //     }
-  //   }
-  //   else {
-  //     alert("Invalid User")
-  //     return false
-  //   }
-  // }
+  login(acno: any, password:any){
+    let accDetails =  this.user; 
+    if (acno in accDetails) {
+      if (password == accDetails[acno]["password"]) {
+      this.currentUser= accDetails[acno]["username"]
+      // console.log(this.currentUser);
+      
+       return true;
+        
+      }
+      else {
+        
+        return false;
+      }
+    }
+    else {
+      alert("Incorrect Username/accno")
+      return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // let accDetails = this.user
+    // if (acno in accDetails){
+    //   if( password == accDetails[acno]["password"]){
+    //     this.currentUser= accDetails[acno]["uname"]
+        
+        
+    //     return true
+    //   }
+    //   else {
+    //     alert("Incorrect Password")
+    //     return false
+    //   }
+    // }
+    // else {
+    //   alert("Invalid User")
+    //   return false
+    // }
+  }
 
   register( acno:any, username: any, password: any, ){
 

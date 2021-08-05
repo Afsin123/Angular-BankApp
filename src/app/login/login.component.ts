@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   acno = "Enter acc/no here"
   password = ""
 
-  
+  currentUser=" "
   constructor( private router:Router, private ds: DataService) {}
   
 
@@ -46,21 +46,19 @@ export class LoginComponent implements OnInit {
     // alert("Login Clicked")
     var acno = this.acno;
 
-    var pswd = this.password;
+    var password = this.password;
 
-    let accDetails = this.ds.user;
-    if (acno in accDetails) {
-      if (pswd == accDetails[acno]["password"]) {
-        alert("Login Successful")
+    var result = this.ds.login(acno,password);
+
+    if(result){
+      alert("Login Successful")
+        
         this.router.navigateByUrl("dashboard")
-      }
-      else {
-        alert("Incorrect Password")
-      }
     }
-    else {
-      alert("Incorrect Username/accno")
-    }
+   else{
+    alert("Incorrect Password")
+   }
+    
   }
   
   // accChange(event:any){
