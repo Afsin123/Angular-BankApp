@@ -16,7 +16,25 @@ export class DataService {
     1004: { acno: 1004, username: "Susha", password: "userfive", balance: 5000 }
   }
 
-  constructor() { }
+  constructor() {
+    this.getDetails()
+   } 
+
+  saveDetails(){
+    localStorage.setItem("user",JSON.stringify(this.user))
+    if(this.currentUser){
+    localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
+    }
+  }
+  getDetails(){
+    if(localStorage.getItem("user")){
+      this.user= JSON.parse(localStorage.getItem("user") ||'' )
+    }
+    
+    if( localStorage.getItem("currentUser") ){
+      this.currentUser=JSON.parse(localStorage.getItem("currentUser") ||'' )
+    }
+  }
 
   login(acno: any, password:any){
     let accDetails =  this.user; 
@@ -24,7 +42,7 @@ export class DataService {
       if (password == accDetails[acno]["password"]) {
       this.currentUser= accDetails[acno]["username"]
       // console.log(this.currentUser);
-      
+      this.saveDetails()
        return true;
         
       }
@@ -37,15 +55,6 @@ export class DataService {
       alert("Incorrect Username/accno")
       return false;
     }
-
-
-
-
-
-
-
-
-
 
 
     // let accDetails = this.user
@@ -81,6 +90,7 @@ export class DataService {
         password,
         balance:0
       }
+      this.saveDetails()
       return true;
     }
 
@@ -94,6 +104,7 @@ export class DataService {
     if (acno in accDetails){
       if( password == accDetails[acno]["password"]){
         accDetails[acno]["balance"]+= amt
+        this.saveDetails()
         return accDetails[acno]["balance"]
       }
       else { 
@@ -116,6 +127,7 @@ export class DataService {
       if( password == accDetails[acno]["password"]){
         if(accDetails[acno]["balance"] >amt) { 
         accDetails[acno]["balance"]-= amt
+        this.saveDetails() 
         return accDetails[acno]["balance"]
       }
       else {
