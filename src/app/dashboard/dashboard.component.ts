@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit {
   amount1 =""
 
   user=this.ds.currentUser;
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
